@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed Sayed Ragab - Writer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #000;
+        color: #fff;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      section {
+        padding: 50px 20px;
+        background-color: #1a1a1a;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h2 {
+        color: #ffc107;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+      }
+
+      ul li {
+        margin-bottom: 15px;
+      }
+
+      ul li h3 {
+        font-size: 24px;
+        color: #fff;
+      }
+
+      ul li p {
+        color: #ccc;
+      }
+
+      /* header section */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: #000;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      header nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      header nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+        position: relative;
+        transition: color 0.3s;
+      }
+
+      header nav a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #ffc107;
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s;
+      }
+
+      header nav a:hover {
+        color: #ffc107;
+      }
+
+      header nav a:hover::after {
+        width: 100%;
+      }
+
+      header nav a.active {
+        color: #ffc107;
+      }
+
+      header nav a.active::after {
+        width: 100%;
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107;
+          color: #ffc107;
+        }
+        50% {
+          text-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107, 0 0 30px #ffc107;
+          color: #ffc107;
+        }
+        100% {
+          text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107;
+          color: #ffc107;
+        }
+      }
+
+      header nav a.comingsoon {
+        color: #ffc107;
+        font-weight: 700;
+        text-transform: uppercase;
+        position: relative;
+        animation: glow 1.5s ease-in-out infinite;
+        text-decoration: none;
+      }
+
+      header nav a.comingsoon::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: #ffc107;
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s;
+      }
+
+      header nav a.comingsoon:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107, 0 0 30px #ffc107;
+      }
+
+      header nav a.comingsoon:hover::after {
+        width: 100%;
+      }
+
+      header nav a.comingsoon.active::after {
+        width: 100%;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* hero section */
+
+      .hero-content p,
+      .hero-content h1,
+      .hero-content h2,
+      .hero-content .buttons a {
+        opacity: 0;
+        animation: fadeInUp 1.5s forwards;
+      }
+
+      .hero-content p {
+        animation-delay: 0.5s;
+      }
+
+      .hero-content h1 {
+        animation-delay: 1s;
+      }
+
+      .hero-content h2 {
+        animation-delay: 1.5s;
+      }
+
+      .hero-content .buttons a {
+        animation-delay: 2s;
+      }
+
+      .hero-content h1 span {
+        color: #ffc107;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #000;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .hero-content {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0 0 10px;
+        color: #ffc107;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .hero-content h2 {
+        font-size: 24px;
+        font-weight: 400;
+        margin: 10px 0;
+      }
+
+      .hero-content .buttons {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .hero-content .buttons a {
+        text-decoration: none;
+        padding: 10px 20px;
+        font-weight: 600;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .hero-content .buttons .contact {
+        background-color: #ffc107;
+        color: #000;
+      }
+
+      .hero-content .buttons .contact:hover {
+        background-color: #e0a800;
+      }
+
+      .hero-content .buttons .works {
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+      }
+
+      .hero-content .buttons .works:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        width: 500px;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        width: 500px;
+        opacity: 0;
+        animation: fadeInUp 1.5s forwards;
+        animation-delay: 2.5s; /* تأخير بعد النصوص */
+      }
+
+      /* تأثير الحركة */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px); /* حركة لأعلى */
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* section about */
+      .text-about {
+        font-size: 18px;
+        line-height: 1.8;
+        display: block;
+        max-height: 72px; /* This will limit the visible area to 3 lines */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: max-height 0.3s ease; /* Smooth transition for height */
+      }
+
+      /* Style for the Read More button */
+      #read-more-btn {
+        background-color: #ffc107;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      #read-more-btn:hover {
+        background-color: #e0a800;
+      }
+
+      /* coming soon section */
+      /* قسم Coming Soon */
+      .coming-soon {
+        margin-top: 100px;
+        /* background-color: #000; */
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      /* النص الرئيسي */
+      /* النص الرئيسي */
+      .coming-soon h2 {
+        color: #ffc107;
+        font-size: 48px;
+        font-weight: 700;
+        text-align: center;
+        animation: glow 1.5s ease-in-out infinite; /* تأثير مستمر */
+      }
+
+      /* تأثير الإضاءة */
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107,
+            0 0 20px #ffc107;
+        }
+        50% {
+          text-shadow: 0 0 20px #ffc107, 0 0 30px #ffc107, 0 0 40px #ffc107,
+            0 0 50px #ffc107;
+        }
+        100% {
+          text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107,
+            0 0 20px #ffc107;
+        }
+      }
+
+      /* النص الفرعي */
+      .coming-soon-text {
+        color: #fff;
+        font-size: 30px;
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+        animation-delay: 1s;
+      }
+
+      /* الحاوية الداخلية */
+      .book-preview {
+        margin-top: 30px;
+        opacity: 0;
+        animation: fadeInUp 1.5s forwards;
+        animation-delay: 1.5s;
+      }
+
+      /* صورة الكتاب */
+      .book-preview img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
+
+      .book-preview img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      }
+
+      /* وصف الكتاب */
+      .book-description {
+        margin-top: 20px;
+        font-size: 20px;
+        color: #fff;
+        line-height: 1.6;
+        opacity: 0;
+        animation: fadeInUp 1.5s forwards;
+        animation-delay: 2s;
+      }
+
+      /* الحركات */
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107;
+        }
+        50% {
+          text-shadow: 0 0 20px #ffc107, 0 0 30px #ffc107, 0 0 40px #ffc107;
+        }
+        100% {
+          text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* book section */
+      .books {
+        margin-top: 100px;
+        padding: 50px 20px;
+        background-color: #1a1a1a;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h2 {
+        color: #ffc107;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .book-items {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .book-item {
+        background-color: #333;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .book-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(255, 193, 7, 0.5);
+      }
+
+      .book-item .book-img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .book-item:hover .book-img {
+        transform: scale(1.1);
+      }
+
+      .book-item h3 {
+        color: #fff;
+        font-size: 24px;
+        margin-top: 10px;
+        transition: color 0.3s ease;
+      }
+
+      .book-item:hover h3 {
+        color: #ffc107;
+      }
+
+      .book-item p {
+        color: #ccc;
+        font-size: 18px;
+        margin-top: 10px;
+        transition: color 0.3s ease;
+      }
+
+      .book-item:hover p {
+        color: #fff;
+      }
+
+      .btn-show-more {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #ffc107;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .btn-show-more:hover {
+        background-color: #e0a800;
+        color: #fff;
+      }
+
+      /* blog section */
+      /* Blog Section Styling */
+      .blog {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        /* background-color: #000; Black background like Hero section */
+        color: #fff; /* White text */
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      /* Blog Content Styling */
+      .blog-content {
+        margin-top: 30px;
+      }
+
+      .blog-image {
+        width: 100%; /* Ensure the image is responsive */
+        max-width: 400px; /* Max width for the image */
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 8px; /* Optional: rounded corners */
+      }
+
+      .blog-description {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      /* Button Styling */
+      .btn-blog {
+        background-color: #ffc107; /* Blue background */
+        color: #000; /* White text */
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+        display: inline-block;
+      }
+
+      .btn-blog:hover {
+        background-color: #e0a800; /* Darker blue on hover */
+      }
+
+      /* contact us section */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      label {
+        color: #fff;
+        margin-bottom: 5px;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        background-color: #333;
+        color: #fff;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #ffc107;
+        color: #000;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #e0a800;
+      }
+
+      /* FOOTER SECTION */
+      .footer .developer-credit {
+        font-size: 14px;
+        color: #ccc;
+        margin-top: 10px;
+      }
+
+      .footer .developer-credit strong {
+        color: #ffc107;
+        transition: color 0.3s;
+      }
+
+      .footer .developer-credit strong:hover {
+        color: #fff;
+      }
+      /* Footer Styling */
+      .footer {
+        background-color: #1a1a1a;
+        color: #ccc;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .footer .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .footer-links {
+        margin-bottom: 15px;
+      }
+
+      .footer-links a {
+        color: #ffc107;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #fff;
+      }
+
+      .footer-social {
+        margin-bottom: 15px;
+      }
+
+      .footer-social a {
+        color: #ffc107;
+        margin: 0 10px;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .footer-social a:hover {
+        color: #fff;
+      }
+
+      .footer-social i {
+        font-size: 18px;
+      }
+
+      .footer-copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .example-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .example-2 .icon-content {
+        margin: 0 10px;
+        position: relative;
+      }
+      .example-2 .icon-content .tooltip {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+      .example-2 .icon-content:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+        top: -50px;
+      }
+      .example-2 .icon-content a {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #4d4d4d;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
+      .example-2 .icon-content a:hover {
+        box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+      }
+      .example-2 .icon-content a svg {
+        position: relative;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+      }
+      .example-2 .icon-content a:hover {
+        color: white;
+      }
+      .example-2 .icon-content a .filled {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: #000;
+        transition: all 0.3s ease-in-out;
+      }
+      .example-2 .icon-content a:hover .filled {
+        height: 100%;
+      }
+
+      .example-2 .icon-content a[data-social="whatsapp"] .filled,
+      .example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+        background-color: #128c7e;
+      }
+
+      .example-2 .icon-content a[data-social="facebook"] .filled,
+      .example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+        background-color: #3b5998;
+      }
+      .example-2 .icon-content a[data-social="instagram"] .filled,
+      .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+        background: linear-gradient(
+          45deg,
+          #405de6,
+          #5b51db,
+          #b33ab4,
+          #c135b4,
+          #e1306c,
+          #fd1f1f
+        );
+      }
+      .example-2 .icon-content a[data-social="youtube"] .filled,
+      .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+        background-color: #ff0000;
+      }
+
+      /* تعديل لتصميم الأجهزة الصغيرة (الهواتف المحمولة والأجهزة اللوحية) */
+      @media (max-width: 768px) {
+        /* تغيير عرض الحاويات */
+        .container {
+          width: 90%;
+        }
+
+        /* تعديل العرض في الهيرو */
+        .hero {
+          flex-direction: column;
+          padding: 20px 10px;
+        }
+
+        /* تعديل النص في الهيرو */
+        .hero-content h1 {
+          font-size: 36px;
+        }
+        .hero-content h2 {
+          font-size: 20px;
+        }
+        .hero-content p {
+          font-size: 16px;
+        }
+
+        /* جعل الأزرار في الهيرو تكون في عمود */
+        .hero-content .buttons {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        /* تغيير صورة الهيرو */
+        .hero-image img {
+          width: 80%;
+          height: auto;
+        }
+
+        /* تعديل النص في قسم "coming soon" */
+        .coming-soon h2 {
+          font-size: 32px;
+        }
+        .coming-soon-text {
+          font-size: 20px;
+        }
+
+        /* تعديل نص الكتاب في قسم الكتب */
+        .book-item h3 {
+          font-size: 18px;
+        }
+
+        .book-item p {
+          font-size: 14px;
+        }
+
+        /* تحسين عرض المدونة */
+        .blog-description {
+          font-size: 16px;
+        }
+
+        /* تعديل الفورم */
+        form input,
+        form textarea {
+          width: 100%;
+          max-width: none;
+        }
+
+        /* تقليل حجم الخط في الفوتر */
+        .footer .developer-credit {
+          font-size: 12px;
+        }
+
+        /* تعديل الهيدر */
+        header nav {
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+        header nav a {
+          font-size: 16px;
+        }
+
+        /* تخصيص الأيقونات في الفوتر */
+        .footer-social a {
+          font-size: 18px;
+        }
+
+        /* جعل القائمة في الهيدر أكثر تكيُّفًا */
+        header nav a {
+          font-size: 18px;
+        }
+
+        /* تعديل الخطوط لأحجام أصغر في الفوتر */
+        .footer .footer-links a {
+          font-size: 14px;
+        }
+      }
+
+      /* تغيير للأجهزة الصغيرة (الهواتف المحمولة جداً) */
+      @media (max-width: 480px) {
+        /* تعديل النص في الهيرو بشكل أكبر */
+        .hero-content h1 {
+          font-size: 28px;
+        }
+        .hero-content h2 {
+          font-size: 18px;
+        }
+
+        .hero-content p {
+          font-size: 14px;
+        }
+
+        /* تعديل الأزرار في الهيرو */
+        .hero-content .buttons {
+          gap: 10px;
+        }
+
+        /* تحسين صورة الكتاب */
+        .book-item {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+
+        .hero-image img {
+          width: 90%;
+          height: auto;
+        }
+
+        /* تغيير الخطوط في الفوتر لتصبح أصغر */
+        .footer .footer-links a {
+          font-size: 12px;
+        }
+
+        /* تقليل الفضاء في المدونة */
+        .blog-description {
+          font-size: 14px;
+        }
+
+        /* تعديل الفورم ليأخذ مساحة أكبر */
+        form input,
+        form textarea {
+          width: 100%;
+        }
+      }
+      /* إخفاء الأيقونة في الأجهزة الكبيرة */
+      .menu-icon {
+        display: none;
+        cursor: pointer;
+      }
+
+      .menu-icon .bar {
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin: 5px auto;
+        background-color: #333;
+      }
+
+      /* إخفاء الروابط العادية في الشاشات الصغيرة */
+      nav a {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      @media (max-width: 768px) {
+        /* إظهار الأيقونة فقط في الشاشات الصغيرة */
+        .menu-icon {
+          display: block;
+        }
+
+        /* إخفاء روابط القائمة في الأجهزة الصغيرة */
+        nav a {
+          display: none;
+        }
+
+        /* عند النقر على الأيقونة، عرض الروابط */
+        nav.active a {
+          display: block;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">Ahmed Sayed Ragab</div>
+      <nav>
+        <!-- أيقونة القائمة فقط للأجهزة الصغيرة -->
+        <div class="menu-icon" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <!-- روابط التنقل -->
+        <a href="#home" class="active">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#comingsoon" class="comingsoon">COMING SOON</a>
+        <a href="#books">BOOKS</a>
+        <a href="#blog">MY BLOG</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
+
+    <!-- Section HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p>Hello!</p>
+        <h1>I'm <span>Ahmed Sayed Ragab</span></h1>
+        <h2>A Writer of Novels, Books, and Articles</h2>
+        <div class="buttons">
+          <a href="#contact" class="contact">CONTACT ME</a>
+          <a href="#books" class="works">MY BOOKS</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="hero.png" alt="Ahmed Sayed Ragab" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p class="text-about" id="about-text">
+          "Ahmed Sayed Ragab is a contemporary Egyptian writer known for his
+          captivating style that has attracted millions of readers on social
+          media. This popularity led Wahi Al-Qalam newspaper to choose him as
+          the Best Literary Figure of 2023, and he was awarded an honorary
+          doctorate by the Academy of Peace in Germany for his efforts in
+          spreading culture, peace, and love among countries. Additionally, the
+          International River of Creativity Academy, headed by Dr. Ihsan
+          Ibrahim, honored him as one of the most influential figures in the
+          Arab world, granting him the title of Ambassador of Peace and an
+          honorary doctorate in recognition of his contributions. He was invited
+          by Egyptian Channel 2 to appear on the program *Shabab Ala Al-Hawa* to
+          discuss his writings and the role of literature in raising awareness
+          of Egyptian and Arab identity. His videos have garnered millions of
+          views, and his followers and readers have dubbed him "The Knight of
+          Writers." Recently, he was hosted by Al-Shams TV channel on the
+          program *Al-Alam Al-Akhar* with media personality Hend Sabry, where
+          the episode spread widely and garnered high viewership in Egypt, the
+          Arab world, and globally. One of his most famous quotes is: "My study
+          of Arabic literature, especially its prose genres, greatly influenced
+          me. From the beginning of my writing, I tried to link history with
+          literature, blending fantasy with reality. Millions were drawn to my
+          writings, encouraging me to continue and even request printed works. I
+          published my first book, *The Kingdoms' Struggle*, which participated
+          in Arab and international book fairs, followed by my short story
+          collection *The Gate of Ameenakh*, which readers around the world
+          requested. Now, we are on the verge of releasing my new book *The
+          Cursed Kingdom of Rimanous*, and God willing, it will be the most
+          popular and widely read in the Arab world. I still feel that I have
+          achieved nothing of my dreams. What I have accomplished is nothing,
+          and my dreams exceed all boundaries. I am certain that God has guided
+          me to fulfill my dream, and I ask God to make my work weigh heavily in
+          my good deeds and intercede for me on the day I meet Him." Ahmed Said
+          Ragab has also written several articles for various newspapers,
+          including *Daily Press Egypt*, *Wahi Al-Qalam*, *Mubasher 24*, and
+          *Ahram Egypt*. The Moroccan Independent Newspaper conducted an
+          interview with him shortly after he received his honorary doctorate."
+        </p>
+        <button id="read-more-btn" onclick="toggleReadMore()">Read More</button>
+      </div>
+    </section>
+
+    <!-- section coming soon -->
+    <section class="coming-soon" id="comingsoon">
+      <div class="container">
+        <h2>Coming Soon</h2>
+        <p class="coming-soon-text">معرض القاهرة الدولي للكتاب</p>
+        <div class="book-preview">
+          <img src="" alt="New Book Cover" />
+          <h2>مملكة ريمانوس</h2>
+          <!-- <p class="book-description">مملكة ريمانوس</p> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Books Section -->
+    <section class="books" id="books">
+      <div class="container">
+        <h2>My Books</h2>
+        <div class="book-items">
+          <div class="book-item">
+            <img src="book1.jpg" alt="Book Title 1" class="book-img" />
+            <div class="book-info">
+              <h3>"صراع الممالك"</h3>
+              <p>" قالت: اسمي ديرامانديانا، ومن أنتم؟ "</p>
+              <a
+                href="https://ahmedsayedrageb.blogspot.com/2024/12/blog-post.html"
+                target="_blank"
+                class="btn-show-more"
+                >Show More</a
+              >
+            </div>
+          </div>
+          <div class="book-item">
+            <img src="book2.jpg" alt="Book Title 2" class="book-img" />
+            <div class="book-info">
+              <h3>"بوابة أميناخ"</h3>
+              <p>" !فجأة صاح علي: وجدته، وجدته "</p>
+              <a
+                href="https://ahmedsayedrageb.blogspot.com/2024/12/blog-post_30.html"
+                target="_blank"
+                class="btn-show-more"
+                >Show More</a
+              >
+            </div>
+          </div>
+          <div class="book-item">
+            <!-- <img src="book3.jpg" alt="Book Title 3" class="book-img" /> -->
+            <div class="book-info">
+              <h3>"مملكة ريمانوس"</h3>
+              <p>قريبا معرض القاهرة الدولي</p>
+              <a
+                href="https://ahmedsayedrageb.blogspot.com"
+                target="_blank"
+                class="btn-show-more"
+                >Show More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+      <div class="container">
+        <h2>My Blog</h2>
+        <p>Stay tuned for my latest blog posts.</p>
+
+        <div class="blog-content">
+          <img src="blog.jpg" alt="Blog Image" class="blog-image" />
+          <p class="blog-description">
+            On my blog, I share my thoughts and literary works, including my
+            novels, books, and articles on various topics. Join me to explore
+            new worlds of literature and inspiration, where words meet ideas to
+            create unforgettable intellectual experiences!
+          </p>
+          <a
+            href="https://ahmedsayedrageb.blogspot.com"
+            target="_blank"
+            class="btn-blog"
+            >Visit My Blog</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form
+          action="https://formsubmit.co/victim111v@gmail.com"
+          method="POST"
+          id="contact-form"
+          onsubmit="sendEmail(event)"
+        >
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" id="send-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      const navLinks = document.querySelectorAll("header nav a");
+      const sections = document.querySelectorAll("section");
+      const options = {
+        threshold: 0.7,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id");
+          const link = document.querySelector(`header nav a[href="#${id}"]`);
+
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => link.classList.remove("active"));
+            link.classList.add("active");
+          }
+        });
+      }, options);
+
+      sections.forEach((section) => observer.observe(section));
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+
+      function toggleReadMore() {
+        const textElement = document.getElementById("about-text");
+        const button = document.getElementById("read-more-btn");
+
+        // Toggle the max-height to show the full text
+        if (textElement.style.maxHeight === "none") {
+          textElement.style.maxHeight = "72px"; // يمكنك تعديل هذا الرقم بناءً على حجم النص
+          button.textContent = "Read More"; // Change button text
+        } else {
+          textElement.style.maxHeight = "none";
+          button.textContent = "Read Less"; // Change button text
+        }
+      }
+
+      // وظيفة لتبديل عرض الروابط في الأجهزة الصغيرة
+      function toggleMenu() {
+        const nav = document.querySelector("nav");
+        nav.classList.toggle("active"); // إضافة/إزالة الكلاس active
+      }
+    </script>
+  </body>
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#books">Books</a>
+          <a href="#contact">Contact</a>
+          <a href="https://ahmedsayedrageb.blogspot.com/" target="_blank"
+            >Blog</a
+          >
+        </div>
+        <div class="social-links">
+          <ul class="example-2">
+            <li class="icon-content">
+              <a
+                data-social="whatsapp"
+                aria-label="Whatsapp"
+                href="https://api.whatsapp.com/send?phone=+201010764089&amp;text=Save%20this%20to%20your%20Favorites%20-%20ME_DO🖤⚡"
+              >
+                <div class="filled"></div>
+                <svg
+                  xml:space="preserve"
+                  viewBox="0 0 24 24"
+                  class="bi bi-whatsapp"
+                  fill="currentColor"
+                  height="20"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Whatsapp</div>
+            </li>
+            <li class="icon-content">
+              <a
+                data-social="facebook"
+                aria-label="Facebook"
+                href="https://www.facebook.com/"
+              >
+                <div class="filled"></div>
+                <svg
+                  xml:space="preserve"
+                  viewBox="0 0 24 24"
+                  class="bi bi-facbook"
+                  fill="currentColor"
+                  height="20"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Facebook</div>
+            </li>
+            <li class="icon-content">
+              <a
+                data-social="instagram"
+                aria-label="Instagram"
+                href="https://www.instagram.com/"
+              >
+                <div class="filled"></div>
+                <svg
+                  xml:space="preserve"
+                  viewBox="0 0 16 16"
+                  class="bi bi-instagram"
+                  fill="currentColor"
+                  height="20"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Instagram</div>
+            </li>
+          </ul>
+        </div>
+        <p class="footer-copyright">
+          © 2025 Ahmed Sayed Ragab. All rights reserved. <br />
+          <span class="developer-credit"
+            >Developed by <strong>Mohamed Ali</strong></span
+          >
+        </p>
+      </div>
+    </div>
+  </footer>
+</html>
